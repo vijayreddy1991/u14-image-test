@@ -208,12 +208,12 @@ jobs:
            - ccache --version
            - clang --version    
 
-  - name: golang-test
+  - name: golang-image
     type: runSh
     runtime:
       container: true
     steps:
-      - IN: u14-services_runCI
+      - IN: u14all-image
       - TASK:
           runtime:
             options:
