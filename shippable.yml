@@ -1,5 +1,5 @@
 jobs:
-  - name: u14-testing
+  - name: u14-image
     type: runSh
     steps:
       - TASK:
@@ -41,10 +41,10 @@ jobs:
             
              
 jobs:
-  - name: u14all-testing
+  - name: u14all-image
     type: runSh
     steps:
-      - IN: u14-testing
+      - IN: u14-image
       - TASK:
           runtime:
             options:
