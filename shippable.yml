@@ -74,23 +74,23 @@ jobs:
     steps:
       - IN: u14all-image
       - TASK:
-          runtime:
-            options:
-              imageName: "drydock/u14golall"
-              imageTag: master
-          script:
-            - source /root/.gvm/scripts/gvm
-            - gvm list
-            - gvm use 1.4
-            - go version
-            - gvm use 1.7.6
-            - go version
-            - gvm use 1.8.7
-            - go version
-            - gvm use 1.9.6
-            - go version
-            - gvm use 1.10.2
-            - go version
+            runtime:
+              options:
+                imageName: "drydock/u14golall"
+                imageTag: master
+                script:
+                  - source /root/.gvm/scripts/gvm
+                  - gvm list
+                  - gvm use 1.4
+                  - go version
+                  - gvm use 1.7.6
+                  - go version
+                  - gvm use 1.8.7
+                  - go version
+                  - gvm use 1.9.6
+                  - go version
+                  - gvm use 1.10.2
+                  - go version
 
   - name: php-test
     type: runSh
