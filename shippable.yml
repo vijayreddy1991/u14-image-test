@@ -69,7 +69,7 @@ jobs:
 
  
 
-  - name: php-test
+  - name: u14php-image
     type: runSh
     steps:
       - IN: u14all-image
@@ -89,7 +89,7 @@ jobs:
              - ~/.phpenv/versions/7.2/bin/php -v
              - ~/.phpenv/versions/7.2/bin/phpunit --version  
 
-  - name: u14ruball-test
+  - name: u14ruball-image
     type: runSh
     runtime:
       container: true
@@ -104,7 +104,7 @@ jobs:
            - source /etc/profile.d/rvm.sh
            - rvm list
            - ruby --version 
-  - name: u14python-test
+  - name: u14python-image
     type: runSh
     steps:
       - IN: u14all-image
@@ -122,7 +122,7 @@ jobs:
          - python3.7 -V
          - pip --version  
 
-  - name: u14nodall
+  - name: u14nodall-image
     type: runSh
     steps:
       - IN: u14all-image
@@ -143,7 +143,7 @@ jobs:
           - nvm list
           - npm --version   
 
-  - name: clojuretest
+  - name: clojure-image
     type: runSh
     steps:
       - IN: u14all-image
@@ -174,7 +174,7 @@ jobs:
              - /usr/local/scala-2.12.6/bin/scala -version
              - /usr/local/scala-2.11.12/bin/scala -version 
 
-  - name: u14javall-test
+  - name: u14javall-image
     type: runSh
     steps:
       - IN: u14all-image
@@ -192,7 +192,7 @@ jobs:
             - ant -version
             - gradle --version 
 
-  - name: u14cppall-test
+  - name: u14cppall-image
     type: runSh
     steps:
       - IN: u14all-image
