@@ -40,7 +40,6 @@ jobs:
              - eb --version
             
              
-jobs:
   - name: u14all-image
     type: runSh
     steps:
