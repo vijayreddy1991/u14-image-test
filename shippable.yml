@@ -72,8 +72,10 @@ jobs:
             - shippable_service postgres stop
             - shippable_service selenium start
             - java -jar /usr/local/selenium/selenium-server-standalone-3.11.0.jar --version
-            - shippable_service selenium stop       
+            - shippable_service selenium stop 
+            - shippable_service sqlite3 start
             - sqlite3 --version
+            - shippable_service sqlite3 stop
             - shippable_service mysql start
             - mysql --version
             - shippable_service mysql stop
