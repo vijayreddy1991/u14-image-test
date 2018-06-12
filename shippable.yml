@@ -50,22 +50,45 @@ jobs:
               imageName: "drydock/u14all"
               imageTag: master
           script:
-         
+            - shippable_service elasticsearch start
             - elasticsearch --version
+            - shippable_service elasticsearch stop
+            - shippable_service memcached start
             - memcached --version
+            - shippable_service memcached stop
+            - shippable_service cassandra start
             - cassandra -v
+            - shippable_service cassandra stop
+            - shippable_service riak start
             - riak version
+            - shippable_service riak stop
+            - shippable_service couchdb start
             - service couchdb start
             - sleep 5
-            - curl http://127.0.0.1:5984  
+            - curl http://127.0.0.1:5984 
+            - shippable_service couchdb stop
+            - shippable_service postgres start
             - psql --version
+            - shippable_service postgres stop
+            - shippable_service selenium start
             - java -jar /usr/local/selenium/selenium-server-standalone-3.11.0.jar --version
+            - shippable_service selenium stop       
             - sqlite3 --version
+            - shippable_service mysql start
             - mysql --version
+            - shippable_service mysql stop
+            - shippable_service mongodb start
             - mongod --version
+            - shippable_service mongodb stop
+            - shippable_service neo4j start
             - /var/lib/neo4j/bin/neo4j version
+            - shippable_service neo4j stop
+            - shippable_service rabbitmq start
             - dpkg -s rabbitmq-server | grep Version
+            - shippable_service rabbitmq stop
+            - shippable_service redis start
             - redis-server --version
+            - shippable_service redis stop
 
  
 
