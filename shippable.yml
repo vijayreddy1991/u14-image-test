@@ -139,7 +139,7 @@ jobs:
               imageTag: master
           script:
              - python --version      
-  - name: python2.7
+  - name: python2_7
     type: runSh
     steps:
       - IN: u14python-image      
@@ -154,7 +154,7 @@ jobs:
              - source /root/venv/2.7/bin/activate
              - python --version                         
              - pip --version         
-  - name: python-3-4
+  - name: python-3_4
     type: runSh
     steps:
       - IN: u14python-image  
@@ -169,7 +169,7 @@ jobs:
             - source /root/venv/3.4/bin/activate
             - python --version                         
             - pip --version 
-  - name: python3.5
+  - name: python-3_5
     type: runSh
     steps:
       - IN: u14python-image            
@@ -184,7 +184,7 @@ jobs:
              - source /root/venv/3.5/bin/activate
              - python --version                         
              - pip --version 
-  - name: python3.6
+  - name: python-3_6
     type: runSh
     steps:
       - IN: u14python-image             
@@ -199,7 +199,7 @@ jobs:
              - source /root/venv/3.6/bin/activate
              - python --version                         
              - pip --version
-  - name: python3.7
+  - name: python-3_7
     type: runSh
     steps:
       - IN: u14python-image             
