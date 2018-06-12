@@ -325,7 +325,7 @@ jobs:
             - go version
             - gvm use 1.10.2
             - go version           
-  - name: golang 1_7
+  - name: golang1_7
     type: runSh
     runtime:
       container: true
@@ -343,7 +343,7 @@ jobs:
             - gvm use go1.7.6
             - go env
             - go version
-  - name: golang 1_8
+  - name: golang1_8
     type: runSh
     runtime:
       container: true
@@ -361,7 +361,7 @@ jobs:
             - gvm use go1.8.7
             - go env
             - go version
-  - name: golang 1_9
+  - name: golang1_9
     type: runSh
     runtime:
       container: true
@@ -379,7 +379,7 @@ jobs:
             - gvm use go1.9.6
             - go env
             - go version  
-  - name: golang 1_10
+  - name: golang1_10
     type: runSh
     runtime:
       container: true
