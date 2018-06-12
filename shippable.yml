@@ -92,12 +92,12 @@ jobs:
             - gvm use 1.10.2
             - go version
 
-- name: php-test
-  type: runSh
-  steps:
-    - IN: u14all-image
-    - TASK:
-        runtime:
+  - name: php-test
+    type: runSh
+    steps:
+      - IN: u14all-image
+      - TASK:
+         runtime:
           options:
             imageName: "drydock/u14phpall"
             imageTag: master
@@ -112,124 +112,124 @@ jobs:
          - ~/.phpenv/versions/7.2/bin/php -v
          - ~/.phpenv/versions/7.2/bin/phpunit --version  
 
-- name: u14ruball-test
-  type: runSh
-  runtime:
-    container: true
-  steps:
-    - IN: u14all-image
-    - TASK:
-        runtime:
-          options:
-            imageName: "drydock/u14ruball"
-            imageTag: master
-        script:
-         - source /etc/profile.d/rvm.sh
-         - rvm list
-         - ruby --version 
+    - name: u14ruball-test
+      type: runSh
+      runtime:
+        container: true
+      steps:
+        - IN: u14all-image
+        - TASK:
+            runtime:
+              options:
+                imageName: "drydock/u14ruball"
+                imageTag: master
+            script:
+             - source /etc/profile.d/rvm.sh
+             - rvm list
+             - ruby --version 
 
-  - name: u14python-test
-    type: runSh
-    steps:
-      - IN: u14all-image
-      - TASK:
-          runtime:
-            options:
-              imageName: "drydock/u14pytall"
-              imageTag: master
-          script:
-             - python --version          
-             - python2.7 -V            
-             - python3.4 -V
-             - python3.5 -V
-             - python3.6 -V
-             - python3.7 -V
-             - pip --version  
+      - name: u14python-test
+        type: runSh
+        steps:
+          - IN: u14all-image
+          - TASK:
+              runtime:
+                options:
+                  imageName: "drydock/u14pytall"
+                  imageTag: master
+              script:
+                 - python --version          
+                 - python2.7 -V            
+                 - python3.4 -V
+                 - python3.5 -V
+                 - python3.6 -V
+                 - python3.7 -V
+                 - pip --version  
 
-- name: u14nodall
-  type: runSh
-  steps:
-    - IN: u14all-image
-    - TASK:
-        runtime:
-          options:
-            imageName: "drydock/u14nodall"
-            imageTag: master
-        script:
-        - grunt --version
-        - mocha --version
-        - vows --version
-        - casperjs --version
-        - bower --version
-        - phantomjs --version
-        - java -jar /srv/selenium-server-standalone-3.12.0.jar --version
-        - node --version
-        - nvm list
-        - npm --version   
+    - name: u14nodall
+      type: runSh
+      steps:
+        - IN: u14all-image
+        - TASK:
+            runtime:
+              options:
+                imageName: "drydock/u14nodall"
+                imageTag: master
+            script:
+            - grunt --version
+            - mocha --version
+            - vows --version
+            - casperjs --version
+            - bower --version
+            - phantomjs --version
+            - java -jar /srv/selenium-server-standalone-3.12.0.jar --version
+            - node --version
+            - nvm list
+            - npm --version   
 
-  - name: clojuretest
-    type: runSh
-    steps:
-      - IN: u14all-image
-      - TASK:
-          runtime:
-            options:
-              imageName: "drydock/u14cloall"
-              imageTag: master
-          script:
-         
-            - echo "(print *clojure-version*)" > clojure.main   
-            - clj clojure.main
-            - java -jar /root/lib/clojure-1.8.0.jar clojure.main
-            - java -jar /root/lib/clojure-1.7.0.jar clojure.main
-            - java -jar /root/lib/clojure-1.6.0.jar clojure.main
-            - java -jar /root/lib/clojure-1.5.1.jar clojure.main
-            - java -jar /root/lib/clojure-1.4.0.jar clojure.main
-            - java -jar /root/lib/clojure-1.3.0.jar clojure.main    
+      - name: clojuretest
+        type: runSh
+        steps:
+          - IN: u14all-image
+          - TASK:
+              runtime:
+                options:
+                  imageName: "drydock/u14cloall"
+                  imageTag: master
+              script:
 
- - name: u14scala-test
-   type: runSh
-   steps:
-     - IN: u14all-image
-     - TASK:
-         runtime:
-           options:
-             imageName: "drydock/u14scaall"
-             imageTag: master
-         script:
-           - /usr/local/scala-2.12.6/bin/scala -version
-           - /usr/local/scala-2.11.12/bin/scala -version 
+                - echo "(print *clojure-version*)" > clojure.main   
+                - clj clojure.main
+                - java -jar /root/lib/clojure-1.8.0.jar clojure.main
+                - java -jar /root/lib/clojure-1.7.0.jar clojure.main
+                - java -jar /root/lib/clojure-1.6.0.jar clojure.main
+                - java -jar /root/lib/clojure-1.5.1.jar clojure.main
+                - java -jar /root/lib/clojure-1.4.0.jar clojure.main
+                - java -jar /root/lib/clojure-1.3.0.jar clojure.main    
 
- - name: u14javall-test
-   type: runSh
-   steps:
-     - IN: u14all-image
-     - TASK:
-         runtime:
-           options:
-             imageName: "drydock/u14javall"
-             imageTag: master
-         script:
-           - shipctl jdk set openjdk7
-           - shipctl jdk set openjdk8
-           - shipctl jdk set oraclejdk8
-           - shipctl jdk set oraclejdk10
-           - mvn --version
-           - ant -version
-           - gradle --version 
+     - name: u14scala-test
+       type: runSh
+       steps:
+         - IN: u14all-image
+         - TASK:
+             runtime:
+               options:
+                 imageName: "drydock/u14scaall"
+                 imageTag: master
+             script:
+               - /usr/local/scala-2.12.6/bin/scala -version
+               - /usr/local/scala-2.11.12/bin/scala -version 
 
- - name: u14cppall-test
-   type: runSh
-   steps:
-     - IN: u14all-image
-     - TASK:
-         runtime:
-           options:
-             imageName: "drydock/u14cppall"
-             imageTag: master
-         script:
-          - gcc --version
-          - autoconf --version
-          - automake --version
-          - ccache --version
-          - clang --version           
+     - name: u14javall-test
+       type: runSh
+       steps:
+         - IN: u14all-image
+         - TASK:
+             runtime:
+               options:
+                 imageName: "drydock/u14javall"
+                 imageTag: master
+             script:
+               - shipctl jdk set openjdk7
+               - shipctl jdk set openjdk8
+               - shipctl jdk set oraclejdk8
+               - shipctl jdk set oraclejdk10
+               - mvn --version
+               - ant -version
+               - gradle --version 
+
+     - name: u14cppall-test
+       type: runSh
+       steps:
+         - IN: u14all-image
+         - TASK:
+             runtime:
+               options:
+                 imageName: "drydock/u14cppall"
+                 imageTag: master
+             script:
+              - gcc --version
+              - autoconf --version
+              - automake --version
+              - ccache --version
+              - clang --version           
