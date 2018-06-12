@@ -325,3 +325,75 @@ jobs:
             - go version
             - gvm use 1.10.2
             - go version           
+  - name: golang 1_7
+    type: runSh
+    runtime:
+      container: true
+    steps:
+      - IN: golang-image
+      - TASK:
+          runtime:
+            options:
+              imageName: "drydock/u14golall"
+              imageTag: master
+          script:
+            - mkdir -p /root
+            - export GOPATH=/root
+            - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - gvm use go1.7.6
+            - go env
+            - go version
+  - name: golang 1_8
+    type: runSh
+    runtime:
+      container: true
+    steps:
+      - IN: golang-image
+      - TASK:
+          runtime:
+            options:
+              imageName: "drydock/u14golall"
+              imageTag: master
+          script:
+            - mkdir -p /root
+            - export GOPATH=/root
+            - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - gvm use go1.8.7
+            - go env
+            - go version
+  - name: golang 1_9
+    type: runSh
+    runtime:
+      container: true
+    steps:
+      - IN: golang-image
+      - TASK:
+          runtime:
+            options:
+              imageName: "drydock/u14golall"
+              imageTag: master
+          script:
+            - mkdir -p /root
+            - export GOPATH=/root
+            - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - gvm use go1.9.6
+            - go env
+            - go version  
+  - name: golang 1_10
+    type: runSh
+    runtime:
+      container: true
+    steps:
+      - IN: golang-image
+      - TASK:
+          runtime:
+            options:
+              imageName: "drydock/u14golall"
+              imageTag: master
+          script:
+            - mkdir -p /root
+            - export GOPATH=/root
+            - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - gvm use go1.10.2
+            - go env
+            - go version
