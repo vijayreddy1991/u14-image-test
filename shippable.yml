@@ -38,7 +38,9 @@ jobs:
              - terraform --version
              - openstack --version
              - eb --version
-
+            
+             
+jobs:
   - name: u14all-testing
     type: runSh
     steps:
