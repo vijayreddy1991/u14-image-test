@@ -89,9 +89,6 @@ jobs:
             - shippable_service redis start
             - redis-server --version
             - shippable_service redis stop
-
- 
-
   - name: u14php-image
     type: runSh
     steps:
