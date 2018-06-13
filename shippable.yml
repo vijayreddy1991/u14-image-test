@@ -392,6 +392,7 @@ jobs:
             - mkdir -p /root
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
             - gvm use 1.7.6
             - go env
             - go version
@@ -410,6 +411,7 @@ jobs:
             - mkdir -p /root
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
             - gvm use 1.8.7
             - go env
             - go version
@@ -428,6 +430,7 @@ jobs:
             - mkdir -p /root
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
             - gvm use 1.9.6
             - go env
             - go version  
@@ -446,6 +449,7 @@ jobs:
             - mkdir -p /root
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
+            - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
             - gvm use 1.10.2
             - go env
             - go version
