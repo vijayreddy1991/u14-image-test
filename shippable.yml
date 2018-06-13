@@ -132,7 +132,7 @@ jobs:
             imageName: "drydock/u14phpall"
             imageTag: master
           script: 
-              - eval "$(phpenv init -)"
+             - eval "$(phpenv init -)"
              - ~/.phpenv/bin/phpenv global 7.0
              - php --version
             
