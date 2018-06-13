@@ -111,7 +111,62 @@ jobs:
              - ~/.phpenv/versions/7.1/bin/phpunit --version
              - ~/.phpenv/versions/7.2/bin/php -v
              - ~/.phpenv/versions/7.2/bin/phpunit --version  
-
+  - name: u14php5_6
+    type: runSh
+    steps:
+      - IN: u14php-image
+      - TASK:
+         runtime:
+          options:
+            imageName: "drydock/u14phpall"
+            imageTag: master
+          script: 
+             - eval "$(phpenv init -)"
+             - /root/.phpenv/bin/phpenv global 5.6
+             - php --version
+            
+  - name: u14php7_0
+    type: runSh
+    steps:
+      - IN: u14php-image
+      - TASK:
+         runtime:
+          options:
+            imageName: "drydock/u14phpall"
+            imageTag: master
+          script: 
+              - eval "$(phpenv init -)"
+             - /root/.phpenv/bin/phpenv global 7.0
+             - php --version
+            
+  - name: u14php7_1
+    type: runSh
+    steps:
+      - IN: u14php-image
+      - TASK:
+         runtime:
+          options:
+            imageName: "drydock/u14phpall"
+            imageTag: master
+          script: 
+             - eval "$(phpenv init -)"
+             - /root/.phpenv/bin/phpenv global 7.1
+             - php --version
+                       
+  - name: u14php7_2
+    type: runSh
+    steps:
+      - IN: u14php-image
+      - TASK:
+         runtime:
+          options:
+            imageName: "drydock/u14phpall"
+            imageTag: master
+          script: 
+             - eval "$(phpenv init -)"
+             - /root/.phpenv/bin/phpenv global 7.2
+             - php --version
+             
   - name: u14ruball-image
     type: runSh
     runtime:
