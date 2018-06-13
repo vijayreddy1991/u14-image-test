@@ -393,6 +393,7 @@ jobs:
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
             - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
+            - source /etc/drydock/.env
             - gvm use go1.7.6
             - go env
             - go version
@@ -412,6 +413,7 @@ jobs:
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
             - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
+            - source /etc/drydock/.env
             - gvm use go1.8.7
             - go env
             - go version
@@ -431,6 +433,7 @@ jobs:
             - export GOPATH=/root
             - export PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/root/usr/local/bin:/root/bin
             - echo '[[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"' >> /etc/drydock/.env
+            - source /etc/drydock/.env
             - gvm use go1.9.6
             - go env
             - go version  
